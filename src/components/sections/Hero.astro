@@ -1,0 +1,40 @@
+---
+// Hero Section Component
+import Carousel from '../Carousel.tsx';
+
+const slides = [
+  {
+    image: '../../src/assets/carousel-images/C1-Image.png',
+    alt: 'Modern Luxury House',
+    title: 'Modern Architecture Excellence',
+    subtitle: 'Creating timeless spaces that inspire and endure'
+  },
+  {
+    image: '../../src/assets/carousel-images/C2-Image.png',
+    alt: 'Contemporary Villa',
+    title: 'Contemporary Design',
+    subtitle: 'Innovative solutions for modern living'
+  },
+  {
+    image: '../../src/assets/carousel-images/C4-Image.jpg',
+    alt: 'Elegant Mansion',
+    title: 'Elegant Residences',
+    subtitle: 'Where luxury meets functionality'
+  }
+];
+---
+
+<!-- Hero Section with React Carousel -->
+<section id="home" class="hero">
+  <Carousel 
+    slides={slides}
+    autoplay={true}
+    showControls={true}
+    showDots={true}
+    carouselId="hero-carousel"
+    height="100vh"
+    client:load
+  />
+</section>
+
+

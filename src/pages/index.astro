@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.tsx";
+import Hero from "../components/sections/Hero.astro";
+import About from "../components/sections/About.astro";
+import Services from "../components/sections/Services.astro";
+import Projects from "../components/sections/Projects.astro";
+import Contact from "../components/sections/Contact.astro";
+---
+
+<Layout title="Architect Portfolio - Professional Architecture Services">
+  <Header client:load />
+
+  <div id="home">
+    <Hero />
+  </div>
+
+  <div id="about">
+    <About />
+  </div>
+
+  <div id="services">
+    <Services />
+  </div>
+
+  <div id="projects">
+    <Projects />
+  </div>
+
+  <div id="contact">
+    <Contact />
+  </div>
+
+  <script>
+    // Handle initial page load with hash
+    document.addEventListener("DOMContentLoaded", () => {
+      const hash = window.location.hash;
+      if (hash) {
+        const targetElement = document.getElementById(hash.replace("#", ""));
+        if (targetElement) {
+          setTimeout(() => {
+            targetElement.scrollIntoView({ behavior: "smooth" });
+          }, 100);
+        }
+      }
+    });
+  </script>
+</Layout>

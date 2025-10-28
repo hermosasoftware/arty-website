@@ -1,0 +1,73 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Professional Architecture Portfolio" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <main>
+      <slot />
+    </main>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <p>&copy; 2024 Architect Portfolio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #333;
+        background-color: #ffffff;
+      }
+
+
+      .footer {
+        background-color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+        color: #666;
+        border-top: 1px solid #e9ecef;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+    </style>
+
+  </body>
+</html>
+

@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scrollspy active states */
+.active {
+  @apply text-gray-900;
+}
+
+.active::after {
+  @apply w-full;
+}
